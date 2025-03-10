@@ -1,0 +1,150 @@
+/* Styling General (1st iteration) */
+/* the hotkey for adding comments in css on vs code are cmd + / */
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+/* Currently using merriweather for the fonts and prefferably would like to change as per the design changes */
+body {
+    font-family: "Merriweather", serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+p{
+    color: rgb(85,85,85);
+}
+
+/* Transition - for the links and the other behaviours */
+a, .btn{
+    /* Btn to change between 2 states and not be instantaneous */
+    transition: all 300ms ease;
+}
+
+/* desktop navigation, html nav id "desktop.nav*/
+
+nav, .nav-links {
+    display: flex;
+}
+
+nav{
+    justify-content: space-around;
+    align-items: center;
+    height: 17vh;  
+    /* vh takes 17% if the screen based on the ppx */
+}
+
+.nav-links{
+    gap: 2rem; /*gap between the elements that are flexed */
+    list-style: none; /*remove the bullet style form the list */
+    font-size: 1.5rem;
+    /* rem is a unit withing front end */
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    text-decoration-color: white;
+
+}
+
+a:hover {
+    color: grey;
+    text-decoration: underline;
+    /* Feature underline not working, check and verify */
+    text-underline-offset: 2rem;
+    text-decoration-color: rgb(181, 181, 181);
+
+}
+
+.logo {
+    font-size: 2rem;
+}
+
+.logo:hover {
+    cursor: default;
+}
+
+/* Hamburger menu styleing */
+#hamburger-nav {
+    display: none;
+}
+
+.hamburger-menu {
+    position: relative;
+    display: inline-block;
+
+}
+
+.hamburger.icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.hamburger.icon span {
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    transition: all 0.3 ease-in-out;
+}
+
+.menu-links {
+    position: absolute;
+    top: 100%;
+    right: 0%;
+    background-color: white;
+    width: fit-content;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3 ease-in-out;
+}
+/* Hamburger menu not appearing as of yet, needs to be fixed */
+
+.menu-links a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: black;
+    text-decoration: none;
+    transition: all 0.3 ease-in-out;
+}
+
+.menu-links li {
+    list-style: none;
+}
+
+.menu-links.open {
+    max-height: 300px;
+}
+
+.hamburger.icon.open span:first-child {
+    transform: rotate(45deg) translate(10px, 5px);
+}
+.hamburger.icon.open span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.icon.open span:last-child { 
+    transform: rotate(-45deg) translate(10px, -5px);
+}
+.hamburger-menu span:first-child {
+    transform: none;
+}
+.hamburger-menu span:first-child {
+    opacity: 1;
+}
+.hamburger-menu span:first-child {
+    transform: none;
+}
